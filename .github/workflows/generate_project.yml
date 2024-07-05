@@ -39,6 +39,6 @@ jobs:
         mv generated_project/iot-go-on-modern-os/* /home/runner/work/iot-go-on-modern-os/iot-go-on-modern-os
         git add .
         git commit -m "Generate project using Cookiecutter"
-        git push
-      env:
+        git push https://weijia:${{secret.PAT}}@github.com/weijia/iot-go-on-modern-os.git
+
         GITHUB_TOKEN: ${{ secrets.PAT }}
