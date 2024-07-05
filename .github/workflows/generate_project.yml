@@ -1,0 +1,44 @@
+name: Generate Project
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+
+    - name: Install Cookiecutter
+      run: pip install cookiecutter
+
+    - name: Run Cookiecutter with Replay
+      run: |
+        COOKIECUTTER_REPO=https://github.com/username/my_template.git
+        REPLAY_FILE=replay/initial_replay_file.json
+
+        # Ensure the output directory exists
+        mkdir -p generated_project
+
+        # Run cookiecutter with the replay file
+        cookiecutter $COOKIECUTTER_REPO --replay-file $REPLAY_FILE --output-dir generated_project
+        cp -R replay generated_project
+
+    - name: Commit and push changes
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        cd generated_project
+        git add .
+        git commit -m "Generate project using Cookiecutter"
+        git push
