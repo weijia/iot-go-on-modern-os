@@ -29,7 +29,6 @@ jobs:
         COOKIECUTTER_REPO=https://github.com/weijia/cookiecutter-golang.git
         REPLAY_FILE=replay/initial_replay_file.json
 
-        cp -R /home/runner/work/iot-go-on-modern-os/iot-go-on-modern-os/replay .
         # Run cookiecutter with the replay file
         cookiecutter $COOKIECUTTER_REPO --replay-file $REPLAY_FILE --output-dir generated_project
         
