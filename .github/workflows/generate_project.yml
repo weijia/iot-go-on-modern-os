@@ -35,9 +35,8 @@ jobs:
 
     - name: Commit and push changes
       run: |
-        cd generated_project/iot-go-on-modern-os
-        rm -rf .git
-        mv -R * /home/runner/work/iot-go-on-modern-os/iot-go-on-modern-os
+        rm -rf generated_project/iot-go-on-modern-os/.git
+        mv generated_project/iot-go-on-modern-os/* /home/runner/work/iot-go-on-modern-os/iot-go-on-modern-os
         git add .
         git commit -m "Generate project using Cookiecutter"
         git push
