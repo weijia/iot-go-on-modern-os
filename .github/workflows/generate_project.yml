@@ -37,13 +37,8 @@ jobs:
       run: |
         rm -rf generated_project/iot-go-on-modern-os/.git
         mv generated_project/iot-go-on-modern-os/* /home/runner/work/iot-go-on-modern-os/iot-go-on-modern-os
-    - name: push
-      uses: github-actions-x/commit@v2.9
-      with:
-        github-token: abc
-        push-branch: 'master'
-        commit-message: 'publish'
-        force-add: 'true'
-        files: .
-        name: weijia
-        email: richardwangwang@gmail.com
+        git add .
+        git commit -m "Generate project using Cookiecutter"
+        git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.PAT }}
