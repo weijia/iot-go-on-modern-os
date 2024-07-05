@@ -29,7 +29,9 @@ jobs:
 
         # Ensure the output directory exists
         mkdir -p generated_project
-
+        cd generated_project
+        git init
+        cd ..
         # Run cookiecutter with the replay file
         cookiecutter $COOKIECUTTER_REPO --replay-file $REPLAY_FILE --output-dir generated_project
         cp -R replay generated_project
