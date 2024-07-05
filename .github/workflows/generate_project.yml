@@ -40,7 +40,7 @@ jobs:
     - name: push
       uses: github-actions-x/commit@v2.9
       with:
-        github-token: ${{ secrets.PAT}}
+        github-token: abc
         push-branch: 'master'
         commit-message: 'publish'
         force-add: 'true'
