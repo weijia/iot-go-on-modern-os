@@ -29,17 +29,14 @@ jobs:
         COOKIECUTTER_REPO=https://github.com/weijia/cookiecutter-golang.git
         REPLAY_FILE=replay/initial_replay_file.json
 
-        # Ensure the output directory exists
-        mkdir -p generated_project
-        # cp -R /home/runner/work/iot-go-on-modern-os/iot-go-on-modern-os/.git generated_project/
-        cp -R /home/runner/work/iot-go-on-modern-os/iot-go-on-modern-os/replay generated_project/
+        cp -R /home/runner/work/iot-go-on-modern-os/iot-go-on-modern-os/replay .
         # Run cookiecutter with the replay file
-        cookiecutter $COOKIECUTTER_REPO --replay-file generated_project/$REPLAY_FILE --output-dir generated_project
+        cookiecutter $COOKIECUTTER_REPO --replay-file $REPLAY_FILE --output-dir generated_project
         
 
     - name: Commit and push changes
       run: |
-        cd generated_project
+        cd generated_project/iot-go-on-modern-os
         git add .
         git commit -m "Generate project using Cookiecutter"
         git push
