@@ -24,6 +24,8 @@ jobs:
 
     - name: Run Cookiecutter with Replay
       run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
         COOKIECUTTER_REPO=https://github.com/weijia/cookiecutter-golang.git
         REPLAY_FILE=replay/initial_replay_file.json
 
@@ -38,8 +40,6 @@ jobs:
 
     - name: Commit and push changes
       run: |
-        git config --global user.name "github-actions[bot]"
-        git config --global user.email "github-actions[bot]@users.noreply.github.com"
         cd generated_project
         git add .
         git commit -m "Generate project using Cookiecutter"
