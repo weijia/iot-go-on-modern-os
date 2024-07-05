@@ -1,0 +1,51 @@
+{
+  "cookiecutter": {
+    "full_name": "Wang Richard",
+    "github_username": "weijia",
+    "app_name": "iot-go-on-modern-os",
+    "project_short_description": "Cross platform basic IoT device controller application written in go.",
+    "docker_hub_username": "weijia",
+    "docker_image": "lacion/alpine-base-image:latest",
+    "docker_build_image": "lacion/alpine-golang-buildimage",
+    "docker_build_image_version": "1.13",
+    "go_mod_or_dep": "mod",
+    "use_docker": "y",
+    "use_git": "y",
+    "use_logrus_logging": "y",
+    "use_viper_config": "y",
+    "use_cobra_cmd": "y",
+    "use_ci": "travis",
+    "_template": "https://github.com/weijia/cookiecutter-golang.git",
+    "_output_dir": "C:\\codes\\personal",
+    "_repo_dir": "C:\\Users\\weijia\\.cookiecutters\\cookiecutter-golang",
+    "_checkout": null
+  },
+  "_cookiecutter": {
+    "full_name": "Luis Morales",
+    "github_username": "lacion",
+    "app_name": "mygolangproject",
+    "project_short_description": "A Golang project.",
+    "docker_hub_username": "lacion",
+    "docker_image": "lacion/alpine-base-image:latest",
+    "docker_build_image": "lacion/alpine-golang-buildimage",
+    "docker_build_image_version": [
+      "1.13",
+      "1.12.9",
+      "1.11.9"
+    ],
+    "go_mod_or_dep": [
+      "mod",
+      "dep"
+    ],
+    "use_docker": "y",
+    "use_git": "y",
+    "use_logrus_logging": "y",
+    "use_viper_config": "y",
+    "use_cobra_cmd": "y",
+    "use_ci": [
+      "travis",
+      "circle",
+      "none"
+    ]
+  }
+}
