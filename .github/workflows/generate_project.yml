@@ -25,7 +25,7 @@ jobs:
     - name: Run Cookiecutter with Replay
       run: |
         git config --global user.name "weijia"
-        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git config --global user.email "richardwangwang@gmail.com"
         COOKIECUTTER_REPO=https://github.com/weijia/cookiecutter-golang.git
         REPLAY_FILE=replay/initial_replay_file.json
 
