@@ -44,3 +44,5 @@ jobs:
         git add .
         git commit -m "Generate project using Cookiecutter"
         git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
